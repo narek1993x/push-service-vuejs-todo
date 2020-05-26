@@ -12,5 +12,5 @@ const rootRef = admin.database().ref();
 
 module.exports = {
   rootRef,
-  admin
+  admin,
 };

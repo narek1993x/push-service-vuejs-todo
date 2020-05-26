@@ -7,6 +7,7 @@ async function getScheduleList() {
     const fbVal = await scheduleEventsRef.once("value");
     const scheduleEvents = fbVal.val();
 
+    
     const resultScheduleEvents = [];
     for (let key in scheduleEvents) {
       const item = scheduleEvents[key];
@@ -14,9 +15,9 @@ async function getScheduleList() {
       for (let itemKey in item) {
         resultScheduleEvents.push({
           ...item[itemKey],
-          id: itemKey
+          id: itemKey,
         });
-      }
+      }  
     }
 
     return resultScheduleEvents;
@@ -27,4 +28,4 @@ async function getScheduleList() {
 
 module.exports = {
   getScheduleList
-};
+}

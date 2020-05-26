@@ -1,3 +1,5 @@
+const functions = require('firebase-functions');
+
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -22,18 +24,6 @@ app.post("/save-subscription", async (req, res) => {
   res.json({ message: "subscription saved success" });
 });
 
-app.post("/remove-subscription", async (req, res) => {
-  await subscription.removeUserSubscription(req.body);
-  res.json({ message: "subscription removed success" });
-});
-
 timer.notificationJob.start();
 
-const port = process.env.PORT || 4000;
-app.listen(port, (err) => {
-  if (err) {
-    timer.notificationJob.stop();
-    throw err;
-  }
-  console.log(`Server listening on http://localhost:${port}/`)
-});
+exports.app = functions.https.onRequest(app);
