@@ -1,0 +1,27 @@
+{
+  "name": "push-service-vuejs-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": "10.x"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "cron": "^1.8.2",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.12.1",
+    "lodash": "^4.17.15",
+    "moment": "^2.25.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
